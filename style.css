@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    font-family:'Courier New', Courier, monospace;
+    background-color:rgb(240, 214, 176);
+    margin: 0px;
+}
+
+.header {
+    font-size: 50px;
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header p {
+    margin: 0px;
+}
