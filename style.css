@@ -9,6 +9,7 @@ body {
 
 .header {
     font-size: 50px;
+    font-weight: 600;
     margin: 0px;
     padding: 20px;
     display: flex;
@@ -19,4 +20,8 @@ body {
 
 .header p {
     margin: 0px;
+}
+
+.display {
+    padding: 20px;
 }
