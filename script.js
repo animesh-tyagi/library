@@ -15,6 +15,7 @@ function addBookToLibrary(author, title, pages, read) {
 addBookToLibrary("J.K. Rowling", "Harry potter", 210, "read");
 addBookToLibrary("Marry Shelly", "Frankenstein", 130, "not read");
 addBookToLibrary("Suzanne Collins", "The Hunger Games", 320, "read");
+
 console.log(myLibrary);
 
 function displayBook(book) {
@@ -22,7 +23,7 @@ function displayBook(book) {
     const fragment = document.createDocumentFragment();
 
     const card = document.createElement("div");
-    card.className = 'class';
+    card.className = 'card';
     card.dataset.id = book.id;
 
     const author = document.createElement("p");
@@ -58,3 +59,5 @@ function displayBooks() {
 }
 
 displayBooks();
+
+

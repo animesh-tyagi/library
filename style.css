@@ -24,4 +24,29 @@ body {
 
 .display {
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    width: 220px;
+    gap: 10px;
+    padding: 10px;
+    background-color:rgb(156, 80, 0);
+    border-radius: 10px;
+    color: white;
+    align-items: center;
+
+}
+.card p {
+    margin: 0px;
+   
 }
