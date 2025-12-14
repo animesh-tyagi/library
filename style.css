@@ -50,3 +50,42 @@ body {
     margin: 0px;
    
 }
+
+.showDialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.showDialog button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 15px;
+    height: 45px;
+    width: 140px;
+    background:rgb(128, 206, 3);
+    border: none;
+    border-radius: 10px;
+
+
+}
+
+dialog {
+    height: 200px;
+    width: 400px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    width: 260px;
+    justify-content: space-between;
+}

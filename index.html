@@ -11,6 +11,34 @@
     <div class="header">
         <p>Library</p>
     </div>
+    <dialog class="bookForm">
+        <form method="dialog">
+            <legend>Enter book information:</legend>
+            <div class="field">
+                <label for="author">Author: </label>
+                <input type="text" id="author" name="author" required>
+            </div>
+            <div class="field">
+                <label for="title">Title : </label>
+                <input type="text" id="title" name="title" requried>
+            </div>
+            <div class="field">
+                <label for="pages">Pages : </label>
+                <input type="number" id="pages" name="pages" required>
+            </div>
+            <div class="field">
+                <label for="read">Status: </label>
+                <input type="text" id="read" name="read" required>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="add">Add</button>
+                <button type = "button" class="cancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+    <div class="showDialog">
+        <button>Add New Book</button>
+    </div>
     <div class="display">
 
     </div>

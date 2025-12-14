@@ -11,16 +11,18 @@ function Book(author, title, pages, read) {
 function addBookToLibrary(author, title, pages, read) {
     myLibrary.push(new Book(author, title, pages, read));
 }
-
+//testing
 addBookToLibrary("J.K. Rowling", "Harry potter", 210, "read");
 addBookToLibrary("Marry Shelly", "Frankenstein", 130, "not read");
 addBookToLibrary("Suzanne Collins", "The Hunger Games", 320, "read");
-
 console.log(myLibrary);
+//testing
+
+
 
 function displayBook(book) {
     const display = document.querySelector(".display");    //select display div from html
-    const fragment = document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();    //Use fragment to add multiple childs to a parent in one go
 
     const card = document.createElement("div");
     card.className = 'card';
@@ -58,6 +60,39 @@ function displayBooks() {
     myLibrary.forEach(displayBook)
 }
 
+//testing
 displayBooks();
+//testing
+
+//dialog
+
+const showDialog = document.querySelector(".showDialog");
+const dialog = document.querySelector("dialog");
+const submit = document.querySelector(".add");
+const cancel = document.querySelector(".cancel");
+
+showDialog.addEventListener("click", () => {
+    dialog.showModal()
+});
+
+cancel.addEventListener("click", () => {
+    dialog.close();
+});
+
+submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    const author = document.querySelector("#author").value;
+    const title = document.querySelector("#title").value;
+    const pages = document.querySelector("#pages").value;
+    const read = document.querySelector("#read").value;
+
+    addBookToLibrary(author, title, pages, read);
+    displayBooks();
+});
+
+
+
+
 
 
