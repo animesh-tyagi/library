@@ -84,8 +84,8 @@ displayBooks();
 
 const showDialog = document.querySelector(".showDialog");
 const dialog = document.querySelector("dialog");
-const submit = document.querySelector(".add");
 const cancel = document.querySelector(".cancel");
+const form = document.querySelector("form");
 
 showDialog.addEventListener("click", () => {
     dialog.showModal()
@@ -95,16 +95,23 @@ cancel.addEventListener("click", () => {
     dialog.close();
 });
 
-submit.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    if(!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
     
-    const author = document.querySelector("#author").value;
-    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value.trim();
+    const title = document.querySelector("#title").value.trim();
     const pages = document.querySelector("#pages").value;
-    const read = document.querySelector("#read").value;
+    const read = document.querySelector("#read").value.trim();
 
     addBookToLibrary(author, title, pages, read);
     displayBooks();
+    dialog.close();
+    form.reset();
 });
 
 //read/unread button
