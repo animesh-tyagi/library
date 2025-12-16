@@ -48,6 +48,22 @@ function displayBook(book) {
     read.innerHTML = `${book.read}`;
     fragment.append(read);
 
+    const buttonsContainer = document.createElement("div");
+    const deleteButton = document.createElement("button");
+    const readToggleButton = document.createElement("button");
+
+    deleteButton.innerHTML = 'Delete';
+    readToggleButton.innerHTML = 'Status';
+
+    buttonsContainer.className = 'buttonsDiv';
+    deleteButton.className = 'delete';
+    readToggleButton.className = 'toggle';
+
+    buttonsContainer.appendChild(readToggleButton);
+    buttonsContainer.appendChild(deleteButton);
+
+    fragment.append(buttonsContainer);
+
     card.appendChild(fragment);
     display.appendChild(card);
 
@@ -90,6 +106,37 @@ submit.addEventListener("click", (e) => {
     addBookToLibrary(author, title, pages, read);
     displayBooks();
 });
+
+//read/unread button
+
+const display = document.querySelector(".display");
+
+display.addEventListener("click", (e) => {
+    if(e.target.classList.contains("toggle")) {
+        const card = e.target.closest(".card");
+        const bookID = card.dataset.id;
+        const book = myLibrary.find((b) => b.id === bookID);
+
+        if (!book) return;
+
+        book.read = book.read === "read" ? "not read": "read";
+        const read = card.querySelector(".read");
+        read.innerHTML = book.read;
+    } else if(e.target.classList.contains("delete")) {
+        const card = e.target.closest(".card");
+        const bookID = card.dataset.id;
+        const index = myLibrary.findIndex((b) => b.id === bookID);
+        if(index!==-1) {
+            myLibrary.splice(index, 1);
+        }
+        displayBooks();
+    }
+    
+});
+
+
+
+
 
 
 
